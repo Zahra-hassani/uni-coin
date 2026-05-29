@@ -1,3 +1,18 @@
+/* @import 'tailwindcss'; */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+    --animate-scale: scale 1.5s 1 linear;
+    @keyframes scale{
+        0%{
+            scale: 0;
+        }
+        100%{
+            scale:100%;
+        }
+    }
+}
+
