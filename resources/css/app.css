@@ -1,18 +1,17 @@
-/* @import 'tailwindcss'; */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+/* @source '../views'; */
+/* @source '../js'; */
 
 @theme {
-    --animate-scale: scale 1.5s 1 linear;
-    @keyframes scale{
-        0%{
-            scale: 0;
-        }
-        100%{
-            scale:100%;
-        }
+  --animate-scale: scale 0.5s 1 linear;
+  @keyframes scale {
+    0% {
+      scale: 0;
     }
+    100% {
+      scale: 100%;
+    }
+  }
 }
 

@@ -18,7 +18,10 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <div class="flex justify-start flex-col items-center gap-3">
+                        <img src="./images/unicoin.png" class="h-14 w-18 rounded-full" alt="">
+                        <h1 class="font-bold dark:text-white text-amber-400 text-2xl"><span class="text-blue-500 dark:text-white">Uni</span>Coin</h1>
+                    </div>
                 </a>
             </div>
 

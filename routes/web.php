@@ -20,6 +20,10 @@ Route::middleware('auth')->group(function () {
         Route::view('/create','Currency.add');
         Route::post('/add','add');
     });
+    Route::prefix('/dashboard')->controller(CurrencyController::class)->group(function () {
+        Route::get('/currency','index');
+        Route::get('/exchanger','exchanger');
+    });
 });
 Route::get('/currency',[CurrencyController::class,'index']);
 

@@ -7,8 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body>
-    <div class="flex w-full flex-col items-center  justify-center gap-4 p-5 bg-blue-950 dark:text-white">
+<body class="h-full bg-blue-950">
+    <header class="w-full border-b dark:border-[#ffffff35] z-50 p-3 flex items-center justify-between sticky top-0 left-0 text-sm backdrop-blur-md not-has-[nav]:hidden">
+            <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+            @if (Route::has('login'))
+                <nav class="flex items-center justify-end gap-4">
+                    @auth
+                        <a
+                            href="{{ url('/dashboard') }}"
+                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-white dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
+                        >
+                            Dashboard
+                        </a>
+                    @else
+                        <a
+                            href="{{ route('login') }}"
+                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-white border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
+                        >
+                            Log in
+                        </a>
+
+                        @if (Route::has('register'))
+                            <a
+                                href="{{ route('register') }}"
+                                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-white dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                                Register
+                            </a>
+                        @endif
+                    @endauth
+                </nav>
+            @endif
+        </header>
+    <div class="flex w-full flex-col items-center justify-center gap-4 p-5 dark:text-white">
         <div class="text-center space-y-3 p-4">
             <h1 class="font-bold text-amber-400 text-2xl md:text-3xl font-sans">Today's Rate</h1>
             <p class="text-base md:text-xl font-light font-sans">Here is the full currencies records.</p>
@@ -26,5 +56,6 @@
             @endforeach
         </div>
     </div>
+    <livewire:footer /> 
 </body>
 </html>

@@ -6,6 +6,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        {{-- icons --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
@@ -21,11 +24,8 @@
         @livewireStyles()
     </head>
     <body class="bg-blue-950/85 dark:bg-[#0a0a0a] text-white/80">
-        <header class="w-full border-b dark:border-[#19140035] z-50 p-3 flex items-center justify-between sticky top-0 left-0 text-sm backdrop-blur-md not-has-[nav]:hidden">
-            <div class="flex justify-start items-center gap-3">
-                <img src="/images/unicoin.png" class="h-12 w-15 rounded-full" alt="">
-            <h1 class="font-bold dark:text-white text-xl">UniCoin</h1>
-            </div>
+        <header class="w-full border-b dark:border-[#fbfbf935] z-50 p-3 flex items-center justify-between sticky top-0 left-0 text-sm bg-blue-700/30 backdrop-blur-md not-has-[nav]:hidden">
+            <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     @auth
@@ -58,9 +58,9 @@
         {{-- <livewire:footer /> --}}
         <livewire:hero />
         <livewire:footer />
-        @if (Route::has('login'))
+        {{-- @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
-        @endif
+        @endif --}}
         @livewireScripts()
     </body>
 </html>
